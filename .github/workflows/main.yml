@@ -26,23 +26,23 @@ jobs:
           rustup component add llvm-tools-preview
           echo "::set-env name=WASM_NM::$(rustc --print sysroot|sed 's|C:|/c|'|sed 's|\\|/|g')/lib/rustlib/x86_64-pc-windows-msvc/bin/llvm-nm.exe"
         shell: bash
-        displayName: Install llvm-nm (Windows)
+        name: Install llvm-nm (Windows)
         if: matrix.os == 'windows-latest'
       - run: |
           choco install ninja
-        displayName: Install Ninja (Windows)
+        name: Install Ninja (Windows)
         if: matrix.os == 'windows-latest'
       - run: |
           brew install ninja
-        displayName: Install Ninja (macOS)
+        name: Install Ninja (macOS)
         if: matrix.os == 'macos-latest'
       - run: |
           sudo apt install ninja-build
-        displayName: Install Ninja (Linux)
+        name: Install Ninja (Linux)
         if: matrix.os == 'ubuntu-latest'
       - run: |
           set -euo pipefail
           export PREFIX=`pwd`/out
           make -j4
         shell: bash
-        displayName: Build
+        name: Build
