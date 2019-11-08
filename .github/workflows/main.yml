@@ -50,6 +50,13 @@ jobs:
       - run: |
           set -euo pipefail
           export PREFIX=`pwd`/out
-          make -j4
+          make -j4 package
         shell: bash
         name: Build
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: built packages
+          path: dist
+
