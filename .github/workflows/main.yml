@@ -14,7 +14,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os:
+          - ubuntu-latest
+          - macos-latest
+          # llvm 9 build is broken on windows for now. Re-enable this when it is fixed:
+          # - windows-latest
     steps:
       - uses: actions/checkout@master
         with:
