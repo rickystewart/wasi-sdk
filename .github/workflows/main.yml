@@ -49,8 +49,7 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
       - run: |
           set -euo pipefail
-          export PREFIX=`pwd`/out
-          make -j4 package
+          sudo make -j4 package
         shell: bash
         name: Build
 
