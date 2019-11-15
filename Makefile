@@ -2,7 +2,7 @@
 # http://creativecommons.org/publicdomain/zero/1.0/
 
 ROOT_DIR=${CURDIR}
-LLVM_PROJ_DIR?=$(ROOT_DIR)/src/llvm-project
+LLVM_PROJ_DIR?=$(MOZ_FETCHES_DIR)/llvm-project
 PREFIX?=$(ROOT_DIR)/opt/wasi-sdk
 
 CLANG_VERSION=$(shell $(MOZ_FETCHES_DIR)/clang/bin/llvm-config --version)
