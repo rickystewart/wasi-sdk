@@ -14,7 +14,7 @@ clean:
 
 build/wasi-libc.BUILT:
 	$(MAKE) -C $(ROOT_DIR)/src/wasi-libc \
-		WASM_CC=$(PREFIX)/bin/clang \
+		WASM_CC=$(MOZ_FETCHES_DIR)/clang/bin/clang \
 		SYSROOT=$(PREFIX)/share/wasi-sysroot
 	touch build/wasi-libc.BUILT
 
