@@ -13,6 +13,7 @@ clean:
 	rm -rf build $(PREFIX)
 
 build/wasi-libc.BUILT:
+	mkdir -p build
 	$(MAKE) -C $(ROOT_DIR)/src/wasi-libc \
 		WASM_CC=$(MOZ_FETCHES_DIR)/clang/bin/clang \
 		SYSROOT=$(PREFIX)/share/wasi-sysroot
